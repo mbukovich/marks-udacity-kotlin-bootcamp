@@ -4,6 +4,7 @@ import java.util.Calendar.getInstance
 fun main(args: Array<String>) {
     println("${if (args[1].toInt() < 12) "Good morning" else "Good night"}, ${args[0]}!")
     dayOfWeek()
+    feedTheFish()
 }
 
 fun dayOfWeek() {
@@ -19,4 +20,15 @@ fun dayOfWeek() {
         7 -> println("Saturday")
         else -> println("You have entered a rift in the space-time continuum.")
     }
+}
+
+fun feedTheFish() {
+    val day = randomDay()
+    val food = "Pellets"
+    println("Today is $day and the fish eat $food")
+}
+
+fun randomDay() : String {
+    val week = listOf ("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday")
+    return week[random().nextInt(7)]
 }
