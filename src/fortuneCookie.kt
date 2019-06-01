@@ -11,4 +11,6 @@ fun getFortuneCookie() : String {
                           "Take it easy and enjoy life!"
                           "Treasure your friends because they are your greatest fortune.")
      print("Enter your Birthday.")
+     var birthday = readLine()?.toIntOrNull() ?: 1
+     
 }
