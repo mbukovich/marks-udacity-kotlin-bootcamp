@@ -1,5 +1,11 @@
 fun main(args : Array<String>) {
-     println(getFortuneCookie())
+     for (i in 1..10) {
+          var yourFortune = getFortuneCookie()
+          println("Your fortune is: " + yourFortune)
+          if (yourFortune == "Take it easy and enjoy life!") {
+               break
+          }
+     }
 }
 
 fun getFortuneCookie() : String {
@@ -12,5 +18,5 @@ fun getFortuneCookie() : String {
                           "Treasure your friends because they are your greatest fortune.")
      print("Enter your Birthday.")
      var birthday = readLine()?.toIntOrNull() ?: 1
-     
+     return fortunes[birthday.rem(fortunes.size)]
 }
