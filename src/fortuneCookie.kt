@@ -15,8 +15,8 @@ fun getFortuneCookie(birthday : Int) : String {
                           "Take it easy and enjoy life!"
                           "Treasure your friends because they are your greatest fortune.")
      return when (birthday) {
-          28 || 31 -> fortunes[4]
-          0..7 -> fortunes[3]
+          28, 31 -> fortunes[4]
+          in 0..7 -> fortunes[3]
           else -> fortunes[birthday.rem(fortunes.size)]
      }
 }
