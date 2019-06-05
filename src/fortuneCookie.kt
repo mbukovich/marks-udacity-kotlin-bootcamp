@@ -23,5 +23,5 @@ fun getFortuneCookie(birthday : Int) : String {
 
 fun getBirthday () : Int {
      print("Enter your Birthday.")
-     var birthday = readLine()?.toIntOrNull() ?: 1
+     return birthday = readLine()?.toIntOrNull() ?: 1
 }
