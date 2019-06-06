@@ -29,6 +29,15 @@ fun shouldChangeWater(
     return true
 }
 
+fun fitMoreFish(
+        tankSize : Int,
+        currentFish : List<Int>,
+        fishSize : Int = 2,
+        hasDecorations : Boolean = true) : Boolean {
+    var available = (tankSize* (if (hasDecorations) 8 else 10) /10) - currentFish.sum()
+    return available >= fishSize
+}
+
 fun feedTheFish() {
     val day = randomDay()
     val food = fishFood(day)
