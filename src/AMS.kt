@@ -26,7 +26,16 @@ fun shouldChangeWater(
         day: String,
         temperature: Int = 22,
         dirty: Int = 20) : Boolean {
-    return true
+    fun isTooHot(temperature: Int) = temperature > 30
+    fun isDirty(dirty: Int) = dirty > 30
+    fun isSunday(day: String) = day == "Sunday"
+    
+    return when {
+        isTooHot(temperature) -> true
+        isDirty(dirty) > 30 -> true
+        isSunday(day) == "Sunday" -> true
+        else -> false
+    }
 }
 
 fun fitMoreFish(
