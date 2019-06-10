@@ -1,8 +1,9 @@
 fun main(args : Array<String>) {
-     for (i in 1..10) {
-          var yourFortune = getFortuneCookie(getBirthday())
+     var yourFortune = getFortuneCookie(getBirthday())
+     println("Your fortune is: $yourFortune")
+     while (!yourFortune.contains("Take it easy")) {
+          yourFortune = getFortuneCookie(getBirthday())
           println("Your fortune is: $yourFortune")
-          if (yourFortune.contains("Take it easy")) break
      }
 }
 
