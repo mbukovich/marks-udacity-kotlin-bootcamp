@@ -14,4 +14,6 @@ fun buildAquarium() {
     myAquarium.height = 80
     
     println("Height: ${myAquarium.height} cm")
+    
+    println("Volume: ${myAquarium.volume} liters")
 }
