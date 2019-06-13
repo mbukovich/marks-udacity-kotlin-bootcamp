@@ -1,4 +1,4 @@
-{
+fun main(args: Array<String>) {
     gameplay(6,rollDice2)
 }
 
