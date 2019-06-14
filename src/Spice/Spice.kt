@@ -6,7 +6,7 @@ class Spice(val name: String, val spiciness: String = "mild") {
         println("Spice Name: $name  Spiciness: $spiciness")
     }
     
-    var heat: Int
+    private val heat: Int
         get() = when(spiciness) {
             "mild" -> 5
             "spicy" -> 10
