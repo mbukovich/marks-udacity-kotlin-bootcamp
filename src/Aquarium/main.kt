@@ -24,9 +24,17 @@ fun buildAquarium() {
     val myAquarium2 = Aquarium(numberOfFish = 9)
 }
 
+fun feedFish(fish: FishAction) {
+    // make some food then
+    fish.eat()
+}
+
 fun makeFish() {
     val shark = Shark()
     val pleco = Plecostomus()
     
     println("Shark: ${shark.color} \nPlecostomus: ${pleco.color}")
+    
+    shark.eat()
+    pleco.eat()
 }
