@@ -1,20 +1,26 @@
 package Spices
 
-abstract class Spice(val name: String, val spiciness: String = "mild") {
+abstract class Spice(val name: String, val spiciness: String = "mild", color: SpiceColor): SpiceColor by Color {
     
-    init {
-        println("Spice Name: $name  Spiciness: $spiciness")
-    }
-    
-    private val heat: Int
-        get() = when(spiciness) {
-            "mild" -> 5
-            "spicy" -> 10
-            "flaming" -> 15
-            else -> 5
-        }
-    
-    fun makeSalt() = Spice("Salt", "mild")
+    abstract fun prepareSpice()
 }
 
-class Curry: Spice() {}
+class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpiceColor): Spice(name, spiciness, color), Grinder {
+    override fun prepareSpice() {
+        grind()
+    }
+    
+    override fun grind() {}
+}
+
+interface Grinder {
+    fun grind()
+}
+
+interface SpiceColor {
+    val color: String
+}
+
+object YellowSpiceColor: SpiceColor {
+    override val color = "yellow"
+}
