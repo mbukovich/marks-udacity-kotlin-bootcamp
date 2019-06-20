@@ -1,5 +1,10 @@
 package Spices
 
+fun main(args: Array<String>) {
+    val curry = Curry("curry", "mild")
+    println(curry.color)
+}
+
 abstract class Spice(val name: String, val spiciness: String = "mild", color: SpiceColor): SpiceColor by Color {
     
     abstract fun prepareSpice()
