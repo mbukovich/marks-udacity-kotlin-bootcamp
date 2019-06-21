@@ -14,9 +14,15 @@ fun main(args: Array<String>) {
     
     val moreBooks = mutableMapOf<String, String>("Great Expectations" to "Dickens")
     moreBooks.getOrPut("A Tale of Two Cities") {"Dickens"}
+    
+    val puppy = Puppy()
+    
+    while (foundation.pages > 0) {
+        puppy.playWithBook(foundation)
+    }
 }
 
-class Book(val title: String, val author: String, val year: String) {
+class Book(val title: String, val author: String, val year: String, var pages: Int = 200) {
     
     fun getTitleAuthor() = title to author
     
@@ -30,5 +36,18 @@ class Book(val title: String, val author: String, val year: String) {
     
     fun printUrl() {
         println(BASE_URL + title + ".html")
+    }
+}
+
+fun Book.getWeight() = pages.toFloat() * 1.5
+
+fun Book.tornPages(numTorn: Int) {
+    pages = pages - numTorn
+    if (pages < 0) pages = 0
+}
+
+class Puppy() {
+    fun playWithBook(book: Book) {
+        book.tornPages(Random.toNextInt(10))
     }
 }
