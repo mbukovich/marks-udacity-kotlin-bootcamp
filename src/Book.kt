@@ -1,3 +1,5 @@
+constant val MAXBOOKS = 10
+
 fun main(args: Array<String>) {
     val foundation = Book("Foundation", "Isaac Asimov", "1951")
     val (title, author, year) = foundation.getTitleAuthorYear()
@@ -19,5 +21,14 @@ class Book(val title: String, val author: String, val year: String) {
     fun getTitleAuthor() = title to author
     
     fun getTitleAuthorYear() = Triple(title, author, year)
+    
+    fun canBorrow(val books: Int) = books < MAXBOOKS
+    
+    companion object Constants {
+        constant val BASE_URL = "www.librarybooks.com/"
+    }
+    
+    fun printUrl() {
+        println(BASE_URL + title + ".html")
     }
 }
