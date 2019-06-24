@@ -1,3 +1,5 @@
 package Buildings
 
-open class BaseBuildingMaterial(var numberNeeded: Int = 1) {}
+open class BaseBuildingMaterial() {
+    open val numberNeeded = 1
+}
