@@ -1,3 +1,5 @@
 package Buildings
 
-class Wood(numberNeeded = 4): BaseBuildingMaterial(numberNeeded) {}
+class Wood: BaseBuildingMaterial() {
+    override val numberNeeded = 4
+}
