@@ -1,6 +1,7 @@
 package Buildings
 
-generic class Building(buildingMaterial: BaseBuildingMaterial, baseMaterialsNeeded: Int = 100) {
+class Building<T: BaseBuildingMaterial> (val buildingMaterial: T) {
+    val baseMaterialsNeeded = 100
     val actualMaterialsNeeded = baseMaterialsNeeded * buildingMaterial.numberNeeded
     
     fun build() {
