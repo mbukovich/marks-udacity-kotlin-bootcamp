@@ -1,6 +1,6 @@
 package Buildings
 
-class Building<T: BaseBuildingMaterial> (val buildingMaterial: T) {
+class Building<out T: BaseBuildingMaterial> (val buildingMaterial: T) {
     val baseMaterialsNeeded = 100
     val actualMaterialsNeeded = baseMaterialsNeeded * buildingMaterial.numberNeeded
     
