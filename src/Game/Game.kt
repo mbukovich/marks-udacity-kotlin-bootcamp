@@ -32,4 +32,18 @@ class Game {
         path.clear()
         false
     }
+    
+    fun move(where : () -> Boolean) : Unit {
+        
+    }
+    
+    fun makeMove(direction : String!) {
+        when (direction) {
+            "n" -> move(north)
+            "s" -> move(south)
+            "e" -> move(east)
+            "w" -> move(west)
+            else -> move(end)
+        }
+    }
 }
