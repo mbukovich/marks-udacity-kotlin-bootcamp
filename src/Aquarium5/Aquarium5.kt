@@ -26,6 +26,6 @@ fun fishExamples() {
             .let{it + 31})
 }
 
-fun myWith(name: String, block: String.() -> unit) {
+inline fun myWith(name: String, block: String.() -> unit) {
     name.block()
 }
