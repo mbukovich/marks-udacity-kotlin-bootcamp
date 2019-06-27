@@ -3,14 +3,10 @@ package Game
 fun main(args: Array<String>) {
     val game = Game()
     
-    println(game.path)
-    game.north()
-    game.east()
-    game.south()
-    game.west()
-    game.end()
-    
-    println(game.path)
+    while (true) {
+        print("Enter a direction: n/s/e/w:")
+        game.makeMove(readLine())
+    }
 }
 
 enum class Directions {
@@ -34,7 +30,7 @@ class Game {
     }
     
     fun move(where : () -> Boolean) : Unit {
-        
+        where()
     }
     
     fun makeMove(direction : String!) {
