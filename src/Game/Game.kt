@@ -30,7 +30,7 @@ class Game {
     }
     
     fun move(where : () -> Boolean) : Unit {
-        where()
+        where.invoke()
     }
     
     fun makeMove(direction : String!) {
